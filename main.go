@@ -23,9 +23,9 @@ import (
 	"os"
 
 	"github.com/kelseyhightower/envconfig"
-	edgewatcher "github.com/nephio-project/edge-watcher"
 	"github.com/nephio-project/common-lib/edge/approve"
 	"github.com/nephio-project/common-lib/edge/porch"
+	edgewatcher "github.com/nephio-project/edge-watcher"
 	"google.golang.org/grpc"
 	"k8s.io/client-go/dynamic"
 

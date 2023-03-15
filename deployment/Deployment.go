@@ -30,10 +30,10 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 
 	"github.com/go-logr/logr"
+	types "github.com/nephio-project/common-lib/nfdeploy"
 	"github.com/nephio-project/edge-watcher/preprocessor"
 	"github.com/nephio-project/nf-deploy-controller/api/v1alpha1"
 	crdreader "github.com/nephio-project/nf-deploy-controller/crd-reader"
-	types "github.com/nephio-project/common-lib/nfdeploy"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	. "k8s.io/apimachinery/pkg/types"

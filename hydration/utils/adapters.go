@@ -19,7 +19,7 @@ package utils
 import (
 	"fmt"
 
-	"github.com/nephio-seed/nf-deploy-controller/hydration/types"
+	"github.com/nephio-project/nf-deploy-controller/hydration/types"
 )
 
 func GetInterfaceConfigSpecMap(configs []*types.InterfaceConfig) map[int]types.InterfaceCfgSpec {

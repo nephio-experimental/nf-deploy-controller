@@ -22,13 +22,13 @@ import (
 	"fmt"
 	"time"
 
+	types4 "github.com/nephio-project/common-lib/ausf"
+	types2 "github.com/nephio-project/common-lib/nfdeploy"
+	types3 "github.com/nephio-project/common-lib/udm"
 	"github.com/nephio-project/edge-watcher/preprocessor"
 	"github.com/nephio-project/nf-deploy-controller/api/v1alpha1"
 	"github.com/nephio-project/nf-deploy-controller/tests/utils"
 	"github.com/nephio-project/nf-deploy-controller/util"
-	types4 "github.com/nephio-project/common-lib/ausf"
-	types2 "github.com/nephio-project/common-lib/nfdeploy"
-	types3 "github.com/nephio-project/common-lib/udm"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

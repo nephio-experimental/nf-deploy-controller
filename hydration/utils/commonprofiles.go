@@ -22,9 +22,9 @@ import (
 
 	"sigs.k8s.io/kustomize/kyaml/yaml"
 
-	"github.com/nephio-seed/nf-deploy-controller/hydration/types"
-	ps "github.com/nephio-seed/nf-deploy-controller/packageservice"
-	nfdeployutil "github.com/nephio-seed/nf-deploy-controller/util"
+	"github.com/nephio-project/nf-deploy-controller/hydration/types"
+	ps "github.com/nephio-project/nf-deploy-controller/packageservice"
+	nfdeployutil "github.com/nephio-project/nf-deploy-controller/util"
 )
 
 //===========================================================================

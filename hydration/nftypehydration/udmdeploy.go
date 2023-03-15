@@ -23,12 +23,12 @@ import (
 	"github.com/go-logr/logr"
 	"sigs.k8s.io/kustomize/kyaml/yaml"
 
+	udmtypes "github.com/nephio-project/common-lib/udm"
 	deployv1alpha1 "github.com/nephio-project/nf-deploy-controller/api/v1alpha1"
 	"github.com/nephio-project/nf-deploy-controller/hydration/types"
 	"github.com/nephio-project/nf-deploy-controller/hydration/utils"
 	ps "github.com/nephio-project/nf-deploy-controller/packageservice"
 	nfdeployutil "github.com/nephio-project/nf-deploy-controller/util"
-	udmtypes "github.com/nephio-project/common-lib/udm"
 )
 
 const (

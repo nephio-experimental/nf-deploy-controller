@@ -21,8 +21,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/nephio-project/nf-deploy-controller/api/v1alpha1"
 	types "github.com/nephio-project/common-lib/nfdeploy"
+	"github.com/nephio-project/nf-deploy-controller/api/v1alpha1"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/util/retry"

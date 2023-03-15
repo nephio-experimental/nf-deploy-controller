@@ -23,12 +23,12 @@ import (
 	"github.com/go-logr/logr"
 	"sigs.k8s.io/kustomize/kyaml/yaml"
 
+	ausftypes "github.com/nephio-project/common-lib/ausf"
 	deployv1alpha1 "github.com/nephio-project/nf-deploy-controller/api/v1alpha1"
 	"github.com/nephio-project/nf-deploy-controller/hydration/types"
 	"github.com/nephio-project/nf-deploy-controller/hydration/utils"
 	ps "github.com/nephio-project/nf-deploy-controller/packageservice"
 	nfdeployutil "github.com/nephio-project/nf-deploy-controller/util"
-	ausftypes "github.com/nephio-project/common-lib/ausf"
 )
 
 const (

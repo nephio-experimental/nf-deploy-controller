@@ -32,12 +32,12 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/predicate"
 
+	validator "github.com/nephio-project/common-lib/nfdeploy/validator"
 	nfdeployv1alpha1 "github.com/nephio-project/nf-deploy-controller/api/v1alpha1"
 	"github.com/nephio-project/nf-deploy-controller/deployment"
 	"github.com/nephio-project/nf-deploy-controller/hydration"
 	ps "github.com/nephio-project/nf-deploy-controller/packageservice"
 	"github.com/nephio-project/nf-deploy-controller/util"
-	validator "github.com/nephio-project/common-lib/nfdeploy/validator"
 )
 
 var (

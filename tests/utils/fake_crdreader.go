@@ -17,8 +17,8 @@ limitations under the License.
 package utils
 
 import (
-	crdreader "github.com/nephio-project/nf-deploy-controller/crd-reader"
 	types "github.com/nephio-project/common-lib/nfdeploy"
+	crdreader "github.com/nephio-project/nf-deploy-controller/crd-reader"
 )
 
 type FakeCRDSet struct {
