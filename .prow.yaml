@@ -1,15 +1,13 @@
 presubmits:
-- name: nf-deploy-controller-presubmit-test
-  branches:
-  - ^main$
-  always_run: true
-  decorate: true
-  spec:
-    containers:
-    - image: golang:1.18
-      command:
-      - make
-      args:
-      - -f
-      - Makefile
-      - test
+  - name: nf-deploy-controller-presubmit-test
+    decorate: true
+    always_run: true
+    spec:
+      containers:
+      - image: golang:1.18
+        command:
+        - make
+        args:
+        - -f
+        - Makefile
+        - test
