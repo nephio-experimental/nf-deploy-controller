@@ -1,0 +1,95 @@
+# Copyright 2022-2023 The Nephio Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+---
+apiVersion: nfdeploy.nephio.org/v1alpha1
+kind: SmfDeploy
+metadata:
+  name: smfdeploy-smf1
+  namespace: nephio-system
+  labels:
+    nephio.org/nf-deploy2: nfDeploy1
+    nephio.org/nf-site-id: smf1
+    nephio.org/nf-type: smf
+spec:
+  capacity:
+    maxSession: 100
+  BgpConfig:
+  - virtualRouterName: Sx-N4
+    virtualRouterNumber: 251
+    routeId: 192.168.224.30
+    asNumber: 64551
+    peerAsNumber: 3249
+    routeDistinguisher: 192.168.224.30:251
+    interfaces:
+    - interfaceName: google-cmg12c-LB1_Port1_SxN4
+      neighborIp: 192.168.250.161
+    - interfaceName: google-cmg12c-LB1_Port2_SxN4
+      neighborIp: 192.168.250.177
+    - interfaceName: google-cmg12c-LB2_Port1_SxN4
+      neighborIp: 192.168.250.193
+    - interfaceName: google-cmg12c-LB2_Port2_SxN4
+      neighborIp: 192.168.250.209
+    - interfaceName: Sx_Lo
+  - virtualRouterName: RAN-MGp1
+    virtualRouterNumber: 300
+    routeId: 192.168.248.68
+    asNumber: 64551
+    peerAsNumber: 3249
+    routeDistinguisher: 192.168.248.68:300
+    interfaces:
+    - interfaceName: google-cmg12u-MG1_RAN_1
+      neighborIp: 192.168.250.161
+    - interfaceName: google-cmg12u-MG1_RAN_2
+      neighborIp: 192.168.250.177
+    - interfaceName: google-cmg12u-MG2_RAN_1
+      neighborIp: 192.168.250.193
+    - interfaceName: google-cmg12u-MG2_RAN_2
+      neighborIp: 192.168.250.209
+    - interfaceName: S1U_Lo_MG1
+  N4Interfaces:
+  - interfaceName: google-cmg12c-LB1_Port1_SxN4
+    latency: "40"
+    bandwidth: "400"
+    ipAddr:
+    - 192.168.250.166/28
+    vlan:
+    - "300"
+    - "301"
+  N7Interfaces:
+  - interfaceName: google-cmg12u-MG1_SGi_71
+    latency: "70"
+    bandwidth: "700"
+    ipAddr:
+    - 192.168.250.45/28
+    vlan:
+    - "500"
+    - "501"
+  N10Interfaces:
+  - interfaceName: google-cmg12u-MG1_SGi_102
+    latency: "100"
+    bandwidth: "1000"
+    ipAddr:
+    - 192.168.250.57/28
+    vlan:
+    - "700"
+    - "701"
+  N11Interfaces:
+  - interfaceName: google-cmg12u-MG1_SGi_112
+    latency: "110"
+    bandwidth: "1100"
+    ipAddr:
+    - 192.168.250.61/28
+    vlan:
+    - "800"
+    - "801"

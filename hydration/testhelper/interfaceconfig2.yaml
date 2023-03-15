@@ -1,0 +1,37 @@
+# Copyright 2022-2023 The Nephio Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+---
+apiVersion: nfdeploy.nephio.org/v1alpha1
+kind: InterfaceConfig
+metadata:
+  name: interfaceConfig2
+spec:
+  - name: google-cmg12u-MG1_SGi_102
+    nfName: nfNameTest6
+    interfaceGroup: interfaceGroupTest6
+    id: 101
+    ipAddr:
+      - 192.168.250.57/28
+    vlan:
+      - 700
+      - 701
+  - name: google-cmg12u-MG1_SGi_112
+    nfName: nfNameTest7
+    interfaceGroup: interfaceGroupTest7
+    id: 111
+    ipAddr:
+      - 192.168.250.61/28
+    vlan:
+      - 800
+      - 801

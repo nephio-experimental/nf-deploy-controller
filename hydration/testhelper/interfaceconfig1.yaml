@@ -1,0 +1,61 @@
+# Copyright 2022-2023 The Nephio Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+---
+apiVersion: nfdeploy.nephio.org/v1alpha1
+kind: InterfaceConfig
+metadata:
+  name: interfaceConfig1
+spec:
+  - name: google-cmg12u-MG1_RAN_1
+    nfName: nfNameTest1
+    interfaceGroup: interfaceGroupTest1
+    id: 31
+    ipAddr:
+      - 192.168.250.163/28
+    vlan:
+      - 200
+      - 201
+  - name: google-cmg12c-LB1_Port1_SxN4
+    nfName: nfNameTest2
+    interfaceGroup: interfaceGroupTest2
+    id: 41
+    ipAddr:
+      - 192.168.250.166/28
+    vlan:
+      - 300
+      - 301
+  - name: google-cmg12u-MG1_SGi_1
+    nfName: nfNameTest3
+    interfaceGroup: interfaceGroupTest3
+    id: 61
+    ipAddr:
+      - 192.168.250.35/28
+    vlan:
+      - 400
+      - 401
+  - name: google-cmg12u-MG1_SGi_71
+    nfName: nfNameTest4
+    interfaceGroup: interfaceGroupTest4
+    id: 71
+    ipAddr:
+      - 192.168.250.45/28
+    vlan:
+      - 500
+      - 501
+  - name: google-cmg12u-MG1_SGi_2
+    nfName: nfNameTest5
+    interfaceGroup: interfaceGroupTest5
+    id: 91
+    ipAddr:
+      - 192.168.250.51/28

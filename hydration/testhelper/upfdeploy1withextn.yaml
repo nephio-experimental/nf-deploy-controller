@@ -1,0 +1,103 @@
+# Copyright 2022-2023 The Nephio Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+---
+apiVersion: nfdeploy.nephio.org/v1alpha1
+kind: UpfDeploy
+metadata:
+  labels:
+    nephio.org/nf-deploy2: nfDeploy1
+    nephio.org/nf-site-id: upf1
+    nephio.org/nf-type: upf
+  name: upfdeploy-upf1
+  namespace: nephio-system
+spec:
+  BgpConfig:
+  - asNumber: 64551
+    interfaces:
+    - interfaceName: google-cmg12c-LB1_Port1_SxN4
+      neighborIp: 192.168.250.161
+    - interfaceName: google-cmg12c-LB1_Port2_SxN4
+      neighborIp: 192.168.250.177
+    - interfaceName: google-cmg12c-LB2_Port1_SxN4
+      neighborIp: 192.168.250.193
+    - interfaceName: google-cmg12c-LB2_Port2_SxN4
+      neighborIp: 192.168.250.209
+    - interfaceName: Sx_Lo
+    peerAsNumber: 3249
+    routeDistinguisher: 192.168.224.30:251
+    routeId: 192.168.224.30
+    virtualRouterName: Sx-N4
+    virtualRouterNumber: 251
+  - asNumber: 64551
+    interfaces:
+    - interfaceName: google-cmg12u-MG1_RAN_1
+      neighborIp: 192.168.250.161
+    - interfaceName: google-cmg12u-MG1_RAN_2
+      neighborIp: 192.168.250.177
+    - interfaceName: google-cmg12u-MG2_RAN_1
+      neighborIp: 192.168.250.193
+    - interfaceName: google-cmg12u-MG2_RAN_2
+      neighborIp: 192.168.250.209
+    - interfaceName: S1U_Lo_MG1
+    peerAsNumber: 3249
+    routeDistinguisher: 192.168.248.68:300
+    routeId: 192.168.248.68
+    virtualRouterName: RAN-MGp1
+    virtualRouterNumber: 300
+  N3Interfaces:
+  - interfaceName: google-cmg12u-MG1_RAN_1
+    ipAddr:
+    - 192.168.250.163/28
+    vlan:
+    - "200"
+    - "201"
+  N4Interfaces:
+  - interfaceName: google-cmg12c-LB1_Port1_SxN4
+    ipAddr:
+    - 192.168.250.166/28
+    vlan:
+    - "300"
+    - "301"
+  N6Interfaces:
+  - interfaceName: google-cmg12u-MG1_SGi_1
+    ipAddr:
+    - 192.168.250.35/28
+    vlan:
+    - "400"
+    - "401"
+  N9Interfaces:
+  - interfaceName: google-cmg12u-MG1_SGi_2
+    ipAddr:
+    - 192.168.250.51/28
+    vlan: []
+  capacity:
+    downlinkThroughput: 10M
+    maximumConnections: 1
+    uplinkThroughput: 1M
+  vendorRef:
+    apiGroup: extension.nephio.org/v1alpha1
+    kind: ExtensionObject
+    name: upfdeploy-upf1-extension
+    namespace: nephio-system
+---
+apiVersion: extension.nephio.org/v1alpha1
+kind: ExtensionObject
+metadata:
+  name: upfdeploy-upf1-extension
+  namespace: nephio-system
+spec:
+  field1: "100"
+  field2: "200"
+  field3: "300"
+  field4: "400"
