@@ -9,7 +9,17 @@ NFDeployment controller watches and process Nephio's NFDeployment custome resour
 
 The following diagram depicts NFDeployment controller's rule in Nephio R1
 
-![NFDeployment Controller's role](./nfdeploy.jpg)
+![NFDeployment Controller's role](./img/nfdeploy.jpg)
+
+1. A NFDeployment CR is applied to the management cluster
+1. NFDeployment controller executes the "fan out" process
+1. Essentially, the fanout process is cloning source package from catalog to each of the target deployment repo
+1. Independently, NFDeployment controller advertises reachability info to the watcher agent running on the workload clusters
+1. User manually provides input to the cloned package(s), then proposes and approves the package(s) to be deployed
+; the deployed package(s) are read by configsync running on workload cluster, and subsequently applies to workload cluster
+1. NF vendor specific NF operator processes Nephio CR, then deploys an instance of NF
+1. watcher-agent running on workload cluster reads Nephio CR status, and reports back to edge-watcher on NFDeployment controller
+
 
 **NFDeployment**
 NFDeployment consists of a deployment unit to track, which includes one or more NF instance, where each instance includes:
@@ -25,7 +35,7 @@ The high level NFDeployment deployment unit also contains PLMN and overall capac
 
 On a high level, NFDeployment controller consists of two entities, hydration and deployment:
 
-![NFDeployment Controller internal high-level design](./nfdeploy-controller-internal.jpg)
+![NFDeployment Controller internal high-level design](./img/nfdeploy-controller-internal.jpg)
 
 The hydration entity examines the NFDeployment CR, clones source package based on vendor and version, and clones those packages to a deployment repo based on cluster's name. It primarily interacts with Porch (now), and in the future will primarily interacts with PackageVariant controller.
 
