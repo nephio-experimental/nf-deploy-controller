@@ -22,6 +22,7 @@ The following diagram depicts NFDeployment controller's rule in Nephio R1
 
 
 **NFDeployment**
+
 NFDeployment consists of a deployment unit to track, which includes one or more NF instance, where each instance includes:
 - ID
 - name of cluster
@@ -49,7 +50,7 @@ You’ll need a Kubernetes cluster to run against. You can use [KIND](https://si
 1. Install Instances of Custom Resources:
 
 ```sh
-kubectl apply -f config/samples/
+make install
 ```
 
 2. Build and push your image to the location specified by `IMG`:
@@ -63,6 +64,14 @@ make docker-build docker-push IMG=<some-registry>/nfdeploy:tag
 ```sh
 make deploy IMG=<some-registry>/nfdeploy:tag
 ```
+
+4. Actually deploy the controller:
+
+```sh
+kubectl apply -f config/deployment/deployment.yaml
+```
+
+**Note** It is expected that your Kubernetes cluster will be running v1.11.0 of all the deployments running in the **cert-manager** namespace, namely: cert-manager, cert-manager-webhook, and cert-manager-cainjector. You can check via `kubectl describe <pod> -n cert-manager`. In case any of them isn't at v1.11.0, you can update via `kubectl edit deployment.apps/cert-manager{-webhook | -cainjector} -n cert-manager`
 
 ### Uninstall CRDs
 To delete the CRDs from the cluster:
@@ -87,28 +96,4 @@ This project aims to follow the Kubernetes [Operator pattern](https://kubernetes
 It uses [Controllers](https://kubernetes.io/docs/concepts/architecture/controller/) 
 which provides a reconcile function responsible for synchronizing resources untile the desired state is reached on the cluster 
 
-### Test It Out
-1. Install the CRDs into the cluster:
-
-```sh
-make install
-```
-
-2. Run your controller (this will run in the foreground, so switch to a new terminal if you want to leave it running):
-
-```sh
-make run
-```
-
-**NOTE:** You can also run this in one step by running: `make install run`
-
-### Modifying the API definitions
-If you are editing the API definitions, generate the manifests such as CRs or CRDs using:
-
-```sh
-make manifests
-```
-
-**NOTE:** Run `make --help` for more information on all potential `make` targets
-
-More information can be found via the [Kubebuilder Documentation](https://book.kubebuilder.io/introduction.html)
+**NOTE:** `make run` does **NOT** working as the controller requires some environment variables and mountPaths to operate
