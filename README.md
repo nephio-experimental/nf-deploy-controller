@@ -96,4 +96,4 @@ This project aims to follow the Kubernetes [Operator pattern](https://kubernetes
 It uses [Controllers](https://kubernetes.io/docs/concepts/architecture/controller/) 
 which provides a reconcile function responsible for synchronizing resources untile the desired state is reached on the cluster 
 
-**NOTE:** `make run` does **NOT** working as the controller requires some environment variables and mountPaths to operate
+**NOTE:** `make run` does **NOT** work as the controller requires some environment variables and mountPaths to operate
