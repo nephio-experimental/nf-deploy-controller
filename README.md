@@ -1,6 +1,9 @@
 # NFDeploy Controller
 NFDeployment controller watches and processes the NFDeployment custom resources. It runs on Nephio's management cluster.
 
+**Note**: Please open issues in the [nephio](https://github.com/nephio-project/nephio)
+repository instead of here, and use the prefix "nf-deploy-controller: " in the issue title.
+
 ## Description
 NFDeployment controller watches and process Nephio's NFDeployment custome resources. It primarily performs the following functions:
 1. interprets CRs embedded inside NFDeployment CR
